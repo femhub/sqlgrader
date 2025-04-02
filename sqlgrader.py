@@ -1258,11 +1258,11 @@ def sql_row_analyzer(sol_rows, student_rows, sol_cols, ordering):
     sol_rows_c = c(list(map(tuple, sol_rows)))
     student_rows_c = c(list(map(tuple, student_rows)))
 
-    # Correct columns
+    # Correct rows
     rows_correct = sol_rows_c & student_rows_c
-    # Columns missing in the student result
+    # Rows missing in the student result
     rows_missing = sol_rows_c - student_rows_c
-    # Excess columns in the student result
+    # Excess rows in the student result
     rows_excess = student_rows_c - sol_rows_c
 
     rows_text = []
@@ -2483,7 +2483,7 @@ def sql_constraints_grader(constraints_check_sol, constraints_check_student):
 
 
 def sql_global_grader(sol_code, student_code):
-    """Serves to grade the sutdent code regarding number and types of statements (sts),
+    """Serves to grade the student code regarding number and types of statements (sts),
     should be run first, before other graders
     :param sol_code:
     SQL solution code, usually the one in the solution cell

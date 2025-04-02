@@ -72,7 +72,9 @@ def grade_message(result, message = ''):
         print(f"❌ {message}")
 
 def grade(grader, prefix = ''):
-    if grader: # If False is returned grader found no problems
+    # grader returns False when no problems are found
+    # grader returns list/string when problems are detected
+    if grader:
         if isinstance(grader, list):
             for i in grader:
                 grade_message(i[0], prefix + i[1])
